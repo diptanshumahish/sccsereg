@@ -1,0 +1,6 @@
+#main {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url(/assets/back1.jpg);
+    background-size: cover;
+}

@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { initFirebase } from "@/config";
+import s from '@/styles/adminLogin.module.css';
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
@@ -18,20 +19,21 @@ export default function Login() {
             <Head>
                 <title>Login </title>
             </Head>
-            <div>
-                <div id="loginForm">
-                    <div className="heads">
+            <main id={s.main}>
+                <div id={s.loginForm}>
+                    <div id={s.formHead}>ADMIN LOGIN</div>
+                    <div className={s.heads}>
                         Email
                     </div>
-                    <input type="email" name="" id="scEmail" onChange={() => {
+                    <input type="email" name="" className={s.inp} id="scEmail" onChange={() => {
                         changeLogEmail(document.getElementById('scEmail').value)
 
                     }} />
-                    <div className="heads">Password</div>
-                    <input type="text" id="scPass" onChange={() => {
+                    <div className={s.heads}>Password</div>
+                    <input type="password" id="scPass" className={s.inp} onChange={() => {
                         changeLogPass(document.getElementById('scPass').value)
                     }} />
-                    <button type="submit" onClick={() => {
+                    <button type="submit" id={s.logButton}onClick={() => {
                         signInWithEmailAndPassword(auth, logEmail, logPass).then(async (user) => {
                             await Cookies.set("jwt", auth.currentUser.email, { expires: 0.5 });
                             router.push('/admin/adminDas');
@@ -41,7 +43,7 @@ export default function Login() {
                         Login
                     </button>
                 </div>
-            </div>
+            </main>
 
         </>
     )

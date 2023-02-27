@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '@/styles/Home.module.css'
+import s from '@/styles/Home.module.css'
 import Link from 'next/link'
 
 
@@ -14,10 +14,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <Link href='/admin/adminLogin' >
-          sign in
-        </Link>
+      <main id={s.main}>
+        <nav>
+          <div id='navLeft'>
+            Students' Chapter CSE
+          </div>
+          <div id="navRight">
+            <Link href='/admin/adminLogin' >
+              sign in
+            </Link>
+          </div>
+        </nav>
+
       </main>
     </>
   )
