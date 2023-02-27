@@ -17,7 +17,7 @@ export default function Home() {
       <main id={s.main}>
         <nav>
           <div id='navLeft'>
-            Students' Chapter CSE
+            Students&apos; Chapter CSE
           </div>
           <div id="navRight">
             <Link href='/admin/adminLogin' >
